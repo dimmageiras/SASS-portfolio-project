@@ -1,0 +1,140 @@
+@include media-sm {
+	.home {
+		position: relative;
+
+		.social-icons {
+			bottom: 5rem;
+			left: 0;
+			position: absolute;
+			right: 0;
+			width: 100%;
+		}
+
+		footer {
+			.copyright {
+				bottom: 1.4rem;
+				left: 0;
+				position: absolute;
+				right: 0;
+				text-align: center;
+			}
+		}
+	}
+
+	.about,
+	.projects,
+	.contact {
+		footer {
+			.copyright {
+				right: 2rem;
+			}
+		}
+	}
+
+	.contact {
+		overflow-y: auto;
+	}
+}
+
+@include media-md {
+	.menu-btn {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.nav {
+		visibility: visible;
+
+		.menu-nav {
+			background-color: transparent;
+			display: block;
+			height: 100%;
+			text-align: right;
+			transform: translateY(0);
+
+			&__item {
+				display: inline;
+				padding-right: 1.5rem;
+			}
+
+			&__link {
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	.home__name {
+		font-size: 3rem;
+	}
+
+	.about {
+		&__bio {
+			font-size: 1.5rem;
+		}
+	}
+
+	.projects {
+		&__bio-image {
+			height: 40vh;
+		}
+
+		&__items {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.text-secondary {
+			font-size: 3rem;
+		}
+	}
+
+	.contact {
+		h2 {
+			text-align: center;
+		}
+
+		&__list {
+			grid-gap: 3rem 8rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		footer {
+			.copyright {
+				transform: none;
+			}
+		}
+	}
+}
+
+@include media-lg {
+	.home {
+		&__name {
+			font-size: 4rem;
+		}
+	}
+
+	.projects {
+		&__items {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.contact {
+		&__list {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}
+
+@include media-xl {
+	.home {
+		&__name {
+			font-size: 5rem;
+		}
+	}
+
+	.projects {
+		&__bio-image {
+			height: 50vh;
+		}
+	}
+} ;

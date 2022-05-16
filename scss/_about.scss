@@ -1,0 +1,56 @@
+.about {
+	padding-bottom: 2rem;
+
+	&__bio-image {
+		@include main-image;
+		@include flex(column);
+		height: 50vh;
+		justify-content: flex-end;
+		min-height: 15rem;
+		width: 100%;
+
+		p {
+			margin-bottom: 2rem;
+		}
+	}
+
+	&__bio {
+		max-width: 55rem;
+		text-align: center;
+		width: 80%;
+
+		.text-secondary {
+			padding-bottom: 1rem;
+		}
+	}
+
+	.jobs {
+		@include grid-column;
+		margin: 2rem auto 0;
+		max-width: 50rem;
+		width: 60vw;
+
+		&__job {
+			background-color: lighten($primaryColor, 10%);
+			border-bottom: 5px solid $secondaryColor;
+			padding: 0.5rem;
+		}
+
+		h2,
+		h3 {
+			margin: 0.5rem 0;
+		}
+
+		h6 {
+			margin: 0.3rem 0;
+		}
+	}
+
+	.social-icons {
+		@include flex(column);
+	}
+
+	footer {
+		@include footer-vertical;
+	}
+}

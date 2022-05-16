@@ -1,0 +1,19 @@
+.home {
+	@include main-image;
+	height: 100%;
+	overflow: hidden;
+	padding-top: 40vh;
+	text-align: center;
+
+	&__name {
+		border-bottom: 2px solid set-text-color($primaryColor);
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
+
+		&--last {
+			color: $secondaryColor;
+			font-weight: 700;
+		}
+	}
+}

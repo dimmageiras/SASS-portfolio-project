@@ -1,0 +1,151 @@
+.projects {
+	padding-bottom: 2rem;
+
+	&__bio-image {
+		@include main-image;
+		@include flex(column);
+		height: 30vh;
+		justify-content: flex-end;
+		min-height: 15rem;
+		width: 100%;
+
+		.text-secondary {
+			font-size: 2rem;
+			margin-bottom: 2rem;
+		}
+	}
+
+	&__items {
+		@include grid-column;
+		margin: 2rem auto 0;
+		max-width: 55rem;
+		width: 60vw;
+	}
+
+	figcaption > cite {
+		font-style: normal;
+	}
+
+	&__item {
+		border-bottom: 5px solid $secondaryColor;
+		cursor: pointer;
+		overflow: hidden;
+		position: relative;
+
+		&::after {
+			background-color: $secondaryColor;
+			content: "";
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			top: 100%;
+			width: 100%;
+			@include transition-ease;
+		}
+
+		&:hover {
+			&::after {
+				opacity: 0.9;
+				top: 0;
+			}
+
+			.projects__btn {
+				opacity: 1;
+			}
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__btns {
+		align-items: center;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		height: 100%;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+
+	&__btn {
+		color: set-text-color($secondaryColor);
+		opacity: 0;
+		@include transition-ease;
+
+		&:hover {
+			color: set-text-color(set-text-color($secondaryColor));
+		}
+	}
+
+	.social-icons {
+		@include flex(column);
+	}
+
+	footer {
+		@include footer-vertical;
+	}
+}
+
+.overlay {
+	background: rgba(0, 0, 0, 0.8);
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transition: opacity 500ms;
+	visibility: hidden;
+
+	&:target {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.popup {
+		background: #fff;
+		border-radius: 5px;
+		display: block;
+		height: fit-content;
+		margin: 40vh auto 0;
+		max-width: 20rem;
+		min-width: 15rem;
+		padding: 20px;
+		position: relative;
+		transition: all 5s ease-in-out;
+		width: 30%;
+
+		h2 {
+			color: #333;
+			font-family: Tahoma, Arial, sans-serif;
+			margin-top: 0;
+		}
+
+		.close {
+			color: #333;
+			font-size: 30px;
+			font-weight: bold;
+			position: absolute;
+			right: 10px;
+			text-decoration: none;
+			top: 10px;
+			transition: all 200ms;
+
+			&:hover {
+				color: $secondaryColor;
+			}
+		}
+
+		.content {
+			color: #333;
+			margin-top: 0.3rem;
+			max-height: 30%;
+			overflow: hidden;
+		}
+	}
+}

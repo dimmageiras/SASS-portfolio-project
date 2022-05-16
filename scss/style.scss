@@ -1,0 +1,75 @@
+@import "./config";
+@import "./menu";
+@import "./home";
+@import "./about";
+@import "./projects";
+@import "./contact";
+@import "./responsive";
+
+body {
+	background-color: $primaryColor;
+	color: set-text-color($primaryColor);
+	height: 100vh;
+	font-family: "Montserrat", sans-serif;
+	line-height: 1;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: 400;
+}
+
+a {
+	color: set-text-color($primaryColor);
+	text-decoration: none;
+}
+
+.text-secondary {
+	color: $secondaryColor;
+}
+
+body > header {
+	padding: 1rem;
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+}
+
+main {
+	height: 100%;
+	isolation: isolate;
+	width: 100%;
+
+	.social-icons {
+		bottom: 1rem;
+		left: 1rem;
+		position: fixed;
+
+		cite {
+			padding: 0.4rem;
+
+			a {
+				@include transition-ease;
+
+				&:hover,
+				&:focus {
+					color: $secondaryColor;
+					outline: none;
+				}
+			}
+		}
+	}
+}
+
+footer {
+	.copyright {
+		bottom: 0.4rem;
+		color: set-text-color($primaryColor);
+		font-size: 1rem;
+		padding: 1rem;
+		position: fixed;
+		right: 1rem;
+		text-align: right;
+	}
+}
